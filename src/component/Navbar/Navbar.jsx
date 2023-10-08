@@ -3,7 +3,7 @@ import './nav.css'
 const Navbar = () => {
     const currentPath = window.location.pathname;
     return (
-        <div className="navbar bg-green-300 py-3">
+        <div className="navbar bg-green-300 py-3 shadow-md">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
