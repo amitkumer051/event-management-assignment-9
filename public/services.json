@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "name": "Wellness Expo 2023",
+      "image": "https://i.ibb.co/fMLCKqm/1-wellness-expo.jpg",
+      "price": "$10.00",
+      "shortDescription": "Join us for a day of health and wellness. Get free health screenings, attend informative workshops, and explore a wide range of wellness products.",
+      "buttonText": "Register Now"
+    },
+    {
+      "id": 2,
+      "name": "FitFest 2023",
+      "image": "https://i.ibb.co/b2HV2BD/2-fit-fest.jpg",
+      "price": "Free Admission",
+      "shortDescription": "Get active and stay fit at FitFest! Participate in fitness challenges, yoga sessions, and sample healthy snacks from local vendors.",
+      "buttonText": "Learn More"
+    },
+    {
+      "id": 3,
+      "name": "Mental Health Awareness Day",
+      "image": "https://i.ibb.co/Y7hYvtj/3-mental-health.jpg",
+      "price": "Free Event",
+      "shortDescription": "Join us for a day of discussions and activities to raise awareness about mental health. Break the stigma and prioritize your well-being.",
+      "buttonText": "Attend Event"
+    },
+    {
+      "id": 4,
+      "name": "Family Health Fair",
+      "image": "https://i.ibb.co/xCx7q3X/4-family-health.jpg",
+      "price": "$5.00 per person",
+      "shortDescription": "A fun-filled day for the whole family! Enjoy health screenings, games, and interactive workshops on family nutrition and well-being.",
+      "buttonText": "Get Tickets"
+    },
+    {
+      "id": 5,
+      "name": "Senior Wellness Day",
+      "image": "https://i.ibb.co/GM4Rjt4/5-senior-wellness.png",
+      "price": "Free Admission",
+      "shortDescription": "Seniors, join us for a day dedicated to your well-being. Explore senior-friendly fitness options, receive health checkups, and enjoy social activities.",
+      "buttonText": "RSVP Now"
+    },
+    {
+      "id": 6,
+      "name": "Healthy Eating Expo",
+      "image": "https://i.ibb.co/2FMR3Rb/6-healthy-eatting.jpg",
+      "price": "$15.00",
+      "shortDescription": "Discover the benefits of a balanced diet at our Healthy Eating Expo. Sample delicious and nutritious foods, attend cooking demos, and consult with dietitians.",
+      "buttonText": "Buy Tickets"
+    }
+  ]
+  
