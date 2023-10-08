@@ -9,8 +9,8 @@ const Doctors = ({ doctor }) => {
                     <img src={image} />
                 </div>
             </div><div>
-                <h3><span className="text-base font-bold">Name:</span> <span className="">{name}</span></h3>
-                <h2><span className="text-base font-bold">Title: </span>{title}</h2>
+                <h3><span className="text-base font-bold">Name:</span> <span className="font-semibold">{name}</span></h3>
+                <h2><span className="text-base font-bold">Title: </span><span className="font-semibold">{title}</span></h2>
             </div>
         </div>
     );

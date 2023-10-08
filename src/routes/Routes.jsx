@@ -5,6 +5,7 @@ import ErrorPage from "../component/ErrorPage/ErrorPage";
 import About from "../component/About/About";
 import Login from "../component/Login/Login";
 import Register from "../component/Register/Register";
+import ServicesDetails from "../component/ServicesDetails/ServicesDetails";
 // import Services from "../Pages/Home/Services";
 
 const router = createBrowserRouter([
@@ -28,11 +29,11 @@ const router = createBrowserRouter([
         path:'/register',
         element:<Register></Register>
       },
-      // {
-      //   path:'/services',
-      //   element:<Services></Services>,
-      //   // loader:()=> fetch('/services.json')
-      // }
+      {
+        path:'/servicedetails/:id',
+        element:<ServicesDetails></ServicesDetails>,
+        loader:()=> fetch('/services.json')
+      }
     ]
   }
 ]);

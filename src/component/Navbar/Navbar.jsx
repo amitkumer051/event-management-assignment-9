@@ -29,7 +29,7 @@ const Navbar = () => {
                 </nav>
             </div>
             <div className="navbar-end">
-                <NavLink to='/login' className="btn btn-warning">Login</NavLink>
+                <NavLink to='/login' className="rounded-md bg-green-500 px-3 py-1  text-white font-bold">Login</NavLink>
             </div>
         </div>
     );
