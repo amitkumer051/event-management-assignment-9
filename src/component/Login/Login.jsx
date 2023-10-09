@@ -10,14 +10,13 @@ const Login = () => {
     const navigate = useNavigate()
     const handleLogin = e => {
         e.preventDefault();
-        const form = new FormData(e.currentTarget);
-        const email = form.get('email')
-        const password = form.get('password')
-        console.log(email, password);
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
         userLogin(email, password)
             .then(result => {
                 console.log(result.user);
+                e.target.reset()
                 Swal.fire('Login Successfull')
                 navigate(location?.state ? location.state : '/')
             })

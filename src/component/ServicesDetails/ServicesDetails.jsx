@@ -3,7 +3,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 const ServicesDetails = () => {
     const services = useLoaderData();
     const { id } = useParams()
-    const serviceData = services.find(service => service.id == id);
+    const serviceData = services?.find(service => service.id == id);
     console.log(serviceData);
     return (
         <div className=" bg-base-200">

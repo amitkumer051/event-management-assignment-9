@@ -21,7 +21,7 @@ const ContactUs = () => {
                     <p className=" mx-auto justify-center text-2xl font-bold ">Live Support</p>
                     <ul className="font-semibold">
                         <li>Have Questions? Chat Now</li>
-                        <li>Need Help? Let's Chat</li>
+                        <li>Need Help? Let Chat</li>
                         <li>Instant Help Desk</li>
                         <li>Chat for Solutions </li>
                     </ul>

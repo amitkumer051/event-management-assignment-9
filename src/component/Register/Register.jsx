@@ -7,12 +7,10 @@ const Register = () => {
     const { createUser } = useContext(AuthContext)
     const handleRegister = e => {
         e.preventDefault();
-        const form = new FormData(e.currentTarget);
-        const name = form.get('name')
-        const photo = form.get('photo')
-        const email = form.get('email')
-        const password = form.get('password')
-        console.log(name, photo, email, password);
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
         if (password.length < 6) {
             Swal.fire('Password should be at least 6 characters or longer')
@@ -26,14 +24,15 @@ const Register = () => {
             Swal.fire('Your password need one Special characters.')
             return;
         }
-
-        createUser(email, password)
+        createUser(email, password,name,photo)
             .then(result => {
                 console.log(result.user);
+                e.target.reset()
                 Swal.fire('Registration Successfull')
             })
             .catch(error => {
                 console.error(error)
+                e.target.reset()
                 Swal.fire(error.message)
             })
     }
