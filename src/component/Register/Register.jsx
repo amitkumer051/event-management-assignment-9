@@ -1,23 +1,41 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Register = () => {
-    const {createUser} =useContext(AuthContext)
-    const handleRegister = e=>{
+    const { createUser } = useContext(AuthContext)
+    const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name')
         const photo = form.get('photo')
         const email = form.get('email')
         const password = form.get('password')
-        console.log(name,photo,email,password);
+        console.log(name, photo, email, password);
 
-        createUser(email,password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => console.error(error))
+        if (password.length < 6) {
+            Swal.fire('Password should be at least 6 characters or longer')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            Swal.fire('Your password need one upper case characters.')
+            return;
+        }
+        else if (!/[#$%&?]/.test(password)) {
+            Swal.fire('Your password need one Special characters.')
+            return;
+        }
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire('Registration Successfull')
+            })
+            .catch(error => {
+                console.error(error)
+                Swal.fire(error.message)
+            })
     }
     return (
         <div className="hero-content flex-col lg:flex-row-reverse">
@@ -51,7 +69,7 @@ const Register = () => {
                         <input type="password" placeholder="password" name="password" className="input input-bordered" required />
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-success">Login</button>
+                        <button className="btn btn-success">Register</button>
                     </div>
                     <div className="mt-4  mb-4 text-center">
                         <p className="text-sm">Already have an account? Please <NavLink to='/login' className='text-blue-800 font-bold text-sm'>Login</NavLink></p>

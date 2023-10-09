@@ -3,15 +3,15 @@ import './nav.css'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 const Navbar = () => {
-    const {user ,logOut}= useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const currentPath = window.location.pathname;
 
-    const handleSignOut =()=>{
+    const handleSignOut = () => {
         logOut()
-        .then(result =>{
-            console.log(result.user);
-        })
-        .catch(error =>console.error(error))
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => console.error(error))
     }
 
 
@@ -24,9 +24,9 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li className={currentPath === '/' ? 'active' : ''}><NavLink to='/'>Home</NavLink></li>
-                        <li className={currentPath === '/about' ? 'active' : ''}><NavLink to='/about'>About</NavLink></li>
+                        <li className={currentPath === '/about' ? 'active' : ''}><NavLink to='/about'>About us</NavLink></li>
                         <li className={currentPath === '/blog' ? 'active' : ''}><NavLink to='/blog'>Blog</NavLink></li>
-                        <li className={currentPath === '/support' ? 'active' : ''}><NavLink to='/support'>Support</NavLink></li>
+                        <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Support</NavLink></li>
                     </ul>
                 </div>
                 <h2 className="text-3xl font-bold text-green-800">TrustCare Health</h2>
@@ -35,19 +35,27 @@ const Navbar = () => {
                 <nav>
                     <ul className=" menu-horizontal px-1 underline-offset-2">
                         <li className={currentPath === '/' ? 'active' : ''}><NavLink to='/'>Home</NavLink></li>
-                        <li className={currentPath === '/about' ? 'active' : ''}><NavLink to='/about'>About</NavLink></li>
+                        <li className={currentPath === '/about' ? 'active' : ''}><NavLink to='/about'>About us</NavLink></li>
                         <li className={currentPath === '/blog' ? 'active' : ''}><NavLink to='/blog'>Blog</NavLink></li>
-                        <li className={currentPath === '/support' ? 'active' : ''}><NavLink to='/support'>Support</NavLink></li>
+                        <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Support</NavLink></li>
                     </ul>
                 </nav>
             </div>
+
             <div className="navbar-end">
-            {
-                user?
-                <NavLink onClick={handleSignOut} className="rounded-md bg-green-500 px-3 py-1  text-white font-bold">Sign Out</NavLink>
-                :
-                <NavLink to='/login' className="rounded-md bg-green-500 px-3 py-1  text-white font-bold">Login</NavLink>
-            }
+                {user &&
+                    <><h2 className="pr-2">{user.displayName}</h2><div className=" mr-2 avatar online">
+                        <div className="w-10  rounded-full">
+                            <img src={user.photoURL} />
+                        </div>
+                    </div></>
+                }
+                {
+                    user ?
+                        <NavLink onClick={handleSignOut} className="rounded-md bg-green-500 px-3 py-1  text-white font-bold">Sign Out</NavLink>
+                        :
+                        <NavLink to='/login' className="rounded-md bg-green-500 px-3 py-1  text-white font-bold">Login</NavLink>
+                }
             </div>
         </div>
     );

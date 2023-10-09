@@ -1,26 +1,39 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FcGoogle } from 'react-icons/fc';
+import Swal from 'sweetalert2'
 
 const Login = () => {
-    const {userLogin}=useContext(AuthContext)
-    const location =useLocation()
-    const navigate =useNavigate()
-    // console.log(location);
-    const handleLogin = e=>{
+    // const [loginUser, setLogInUser] = useState(null)
+    const { userLogin, signInWithGoogle } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email')
         const password = form.get('password')
-        console.log(email,password);
+        console.log(email, password);
 
-        userLogin(email,password)
-        .then(result =>{
-            console.log(result.user);
+        userLogin(email, password)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire('Login Successfull')
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.error(error)
+                Swal.fire(error.message)
+            })
+    }
 
-            navigate(location?.state? location.state : '/')
-        })
-        .catch(error =>console.error(error))
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => console.error(error))
     }
     return (
         <div className="hero-content flex-col lg:flex-row-reverse mt-4">
@@ -46,6 +59,9 @@ const Login = () => {
                     </div>
                     <div className="mt-3 text-center">
                         <p className="text-sm">Do not have an account? Please <NavLink to='/register' className='text-blue-800 font-bold text-sm'>Register</NavLink></p>
+                    </div>
+                    <div className="text-center mt-4">
+                        <button onClick={handleGoogleSignIn} className="btn btn-primary">  <FcGoogle className="text-2xl"></FcGoogle>Sign up With Google</button>
                     </div>
                 </form>
             </div>

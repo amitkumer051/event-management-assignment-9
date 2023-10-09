@@ -7,7 +7,6 @@ const ServicesDetails = () => {
     console.log(serviceData);
     return (
         <div className=" bg-base-200">
-            {/* <h2 className="text-4xl lg:visible md:hidden font-bold text-center pt-6 text-gray-700">Service Details</h2> */}
             <div className=" lg:pt-0  pt-28">
                 <div className="hero-content h-96 flex-col lg:flex-row-reverse ">
                     <img src={serviceData.image} className="max-w-sm rounded-lg " />
