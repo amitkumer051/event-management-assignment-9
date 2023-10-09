@@ -25,7 +25,7 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li className={currentPath === '/' ? 'active' : ''}><NavLink to='/'>Home</NavLink></li>
                         <li className={currentPath === '/about' ? 'active' : ''}><NavLink to='/about'>About us</NavLink></li>
-                        <li className={currentPath === '/blog' ? 'active' : ''}><NavLink to='/blog'>Blog</NavLink></li>
+                        <li className={currentPath === '/blogs' ? 'active' : ''}><NavLink to='/blogs'>Blog</NavLink></li>
                         <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Support</NavLink></li>
                     </ul>
                 </div>
@@ -36,7 +36,7 @@ const Navbar = () => {
                     <ul className=" menu-horizontal px-1 underline-offset-2">
                         <li className={currentPath === '/' ? 'active' : ''}><NavLink to='/'>Home</NavLink></li>
                         <li className={currentPath === '/about' ? 'active' : ''}><NavLink to='/about'>About us</NavLink></li>
-                        <li className={currentPath === '/blog' ? 'active' : ''}><NavLink to='/blog'>Blog</NavLink></li>
+                        <li className={currentPath === '/blogs' ? 'active' : ''}><NavLink to='/blogs'>Blog</NavLink></li>
                         <li className={currentPath === '/contactUs' ? 'active' : ''}><NavLink to='/contactUs'>Support</NavLink></li>
                     </ul>
                 </nav>

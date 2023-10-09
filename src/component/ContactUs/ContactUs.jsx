@@ -15,7 +15,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
-            <div className="py-14 grid lg:grid-cols-3 mf:grid-cols-2 grid-cols-1 mx-auto text-center">
+            <div className="py-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto text-center gap-10">
                 <div className="text-center space-y-6">
                 <FcCustomerSupport className="text-7xl text-center mx-auto"></FcCustomerSupport>
                     <p className=" mx-auto justify-center text-2xl font-bold ">Live Support</p>
@@ -34,6 +34,7 @@ const ContactUs = () => {
                         <li>Tele phone: 4803-6353</li>
                         <li>Tele phone: 5803-6321</li>
                         <li>Tele phone: 5403-3453</li>
+                        <li>Tele phone: 1234-7857</li>
                     </ul>
                     <button className="btn btn-accent text-white">call now</button>
                 </div>
@@ -43,7 +44,8 @@ const ContactUs = () => {
                     <ul className="font-semibold">
                         <li>example032@gmail.com</li>
                         <li>ak9992342@gmail.com</li>
-                        <li>sazzadur123@.gmail.com</li>
+                        <li>sazzadur123@gmail.com</li>
+                        <li>atikur@gmail.com</li>
                     </ul>
                     <button className="btn btn-accent text-white">Contact</button>
                 </div>

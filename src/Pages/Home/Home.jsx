@@ -1,5 +1,6 @@
+
+import ContactUs from "../../component/ContactUs/ContactUs";
 import Banner from "./Banner";
-import Footer from "./Footer";
 import Services from "./Services";
 import Trainer from "./Trainer";
 
@@ -9,7 +10,7 @@ const Home = () => {
              <Banner></Banner>
              <Services></Services>
              <Trainer></Trainer>
-             <Footer></Footer>
+             <ContactUs></ContactUs>
         </div>
     );
 };

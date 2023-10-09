@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FcGoogle } from 'react-icons/fc';
 import Swal from 'sweetalert2'
 
 const Login = () => {
-    // const [loginUser, setLogInUser] = useState(null)
     const { userLogin, signInWithGoogle } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
