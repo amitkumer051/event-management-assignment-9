@@ -17,3 +17,5 @@ Currently, two official plugins are available:
 - When user open my website user see the update news of my portal.
 - Detailed descriptions of medical services, treatments, and specialties offered.
 - contact information detailed contact information, including email, phone numbers, and email addresses.
+
+Live link: https://event-management-assignm-f12e6.web.app
